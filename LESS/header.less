@@ -1,9 +1,18 @@
 header {
-    // position: fixed;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-content: center;
     height: auto;
+    background: white;
+    margin: 0 auto;
+    @media @tablet {
+        flex-direction: column;
+    }
+
     
     nav {
         display: flex;
@@ -11,12 +20,26 @@ header {
         align-content: center;
         margin: auto 0;
         width: 500px;
+        @media @tablet {
+            margin: auto;
+        }
         a {
             font-size: 2rem;
             text-decoration: none;
-            color: #263F4D;
+            color: @blue;
+            padding: 5px 15px;
             &:hover {
                 text-decoration: underline;
+            }
+        }
+        .log-in {
+            color: white;
+            background: @lightBlue;
+            border-radius: 15px;
+            padding: 5px 15px;
+            &:hover {
+                background: @blue;
+                text-decoration: none;
             }
         }
 
@@ -24,5 +47,15 @@ header {
     img {
         max-height: 100px;
         margin: 10px 40px;
+        &:hover {
+            border: 2px solid @blue;
+            cursor: pointer;
+        }
+        @media @tablet {
+            margin: auto;
+        }
+        @media @mobile {
+            max-height: 70px;
+        }
     }
 }
